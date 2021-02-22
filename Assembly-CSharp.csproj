@@ -60,6 +60,8 @@
      <Compile Include="Assets\Scripts\ConnectionScript.cs" />
      <Compile Include="Assets\Scripts\DeleteObjectScript.cs" />
      <Compile Include="Assets\Scripts\SettingsScript.cs" />
+     <None Include="Assets\Fonts\Comfortaa\README.txt" />
+     <None Include="Assets\Fonts\Comfortaa\OFL.txt" />
  <Reference Include="UnityEngine">
  <HintPath>D:/Unity/2020.2.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
