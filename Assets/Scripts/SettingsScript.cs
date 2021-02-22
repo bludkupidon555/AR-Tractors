@@ -16,6 +16,6 @@ public class SettingsScript : MonoBehaviour
 
     void LoadSceneFunction()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(3);
     }
 }
