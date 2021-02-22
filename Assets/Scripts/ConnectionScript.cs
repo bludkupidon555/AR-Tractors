@@ -31,7 +31,7 @@ public class ConnectionScript : MonoBehaviour
         {
             SqliteCommand cmd = new SqliteCommand();
             cmd.Connection = dbconnection;
-            cmd.CommandText = "SELECT * FROM Tractors";
+            cmd.CommandText = "SELECT * FROM LocalizationTable";
             SqliteDataReader r = cmd.ExecuteReader();
             while (r.Read())
             {

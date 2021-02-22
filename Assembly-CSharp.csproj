@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\ChooseTractor.cs" />
      <Compile Include="Assets\Scripts\BackMenuScript.cs" />
      <Compile Include="Assets\Scripts\ExitScript.cs" />
+     <Compile Include="Assets\Scripts\InstructionsScene.cs" />
      <Compile Include="Assets\Scripts\MainSceneScript.cs" />
      <Compile Include="Assets\Scripts\ProgrammManager.cs" />
      <Compile Include="Assets\Scripts\Rotation.cs" />
