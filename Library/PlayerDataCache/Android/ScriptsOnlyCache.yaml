@@ -4,12 +4,16 @@ ScriptsOnlyBuild:
     - AddObject
     - BackMenuScript
     - ChooseTractor
+    - ConnectionScript
     - DeleteObjectScript
     - ExitScript
+    - InstructionsScene
     - MainSceneScript
     - OrientationScreen
     - ProgrammManager
     - Rotation
+    - SetPositionScrollView
+    - SettingsScript
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.XR.ARCore.Editor.dll:
@@ -51,6 +55,29 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Text
   sceneClasses:
+    Assets/Scenes/InstructionsScene.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
     Assets/Scenes/MainScene.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -70,76 +97,76 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
-    - Class: 54
-      Script: {instanceID: 0}
     - Class: 64
-      Script: {instanceID: 0}
-    - Class: 65
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1464}
+      Script: {instanceID: 1476}
     - Class: 114
-      Script: {instanceID: 1488}
+      Script: {instanceID: 1500}
     - Class: 114
-      Script: {instanceID: 1570}
+      Script: {instanceID: 1584}
     - Class: 114
-      Script: {instanceID: 1596}
+      Script: {instanceID: 1610}
     - Class: 114
-      Script: {instanceID: 1642}
+      Script: {instanceID: 1656}
     - Class: 114
-      Script: {instanceID: 1680}
+      Script: {instanceID: 1694}
     - Class: 114
-      Script: {instanceID: 1826}
+      Script: {instanceID: 1842}
     - Class: 114
-      Script: {instanceID: 1948}
+      Script: {instanceID: 1964}
     - Class: 114
-      Script: {instanceID: 2226}
+      Script: {instanceID: 2242}
     - Class: 114
-      Script: {instanceID: 2254}
+      Script: {instanceID: 2270}
     - Class: 114
-      Script: {instanceID: 2326}
+      Script: {instanceID: 2342}
     - Class: 114
-      Script: {instanceID: 2470}
+      Script: {instanceID: 2486}
     - Class: 114
-      Script: {instanceID: 2642}
+      Script: {instanceID: 2658}
     - Class: 114
-      Script: {instanceID: 2652}
+      Script: {instanceID: 2668}
     - Class: 114
-      Script: {instanceID: 2736}
+      Script: {instanceID: 2754}
     - Class: 114
-      Script: {instanceID: 2882}
+      Script: {instanceID: 2900}
     - Class: 114
-      Script: {instanceID: 2886}
+      Script: {instanceID: 2904}
     - Class: 114
-      Script: {instanceID: 2890}
+      Script: {instanceID: 2908}
     - Class: 114
-      Script: {instanceID: 3038}
+      Script: {instanceID: 3056}
     - Class: 114
-      Script: {instanceID: 3044}
+      Script: {instanceID: 3062}
     - Class: 114
-      Script: {instanceID: 3084}
+      Script: {instanceID: 3102}
     - Class: 114
-      Script: {instanceID: 3228}
+      Script: {instanceID: 3246}
     - Class: 114
-      Script: {instanceID: 3232}
+      Script: {instanceID: 3250}
     - Class: 114
-      Script: {instanceID: 3278}
+      Script: {instanceID: 3296}
     - Class: 114
-      Script: {instanceID: 3406}
+      Script: {instanceID: 3310}
     - Class: 114
-      Script: {instanceID: 3492}
+      Script: {instanceID: 3428}
     - Class: 114
-      Script: {instanceID: 3512}
+      Script: {instanceID: 3514}
     - Class: 114
-      Script: {instanceID: 3550}
+      Script: {instanceID: 3534}
     - Class: 114
-      Script: {instanceID: 3882}
+      Script: {instanceID: 3574}
     - Class: 114
-      Script: {instanceID: 4022}
+      Script: {instanceID: 3910}
+    - Class: 114
+      Script: {instanceID: 4050}
+    - Class: 114
+      Script: {instanceID: 17350}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -178,25 +205,29 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1488}
+      Script: {instanceID: 1500}
     - Class: 114
-      Script: {instanceID: 1948}
+      Script: {instanceID: 1964}
     - Class: 114
-      Script: {instanceID: 2226}
+      Script: {instanceID: 2242}
     - Class: 114
-      Script: {instanceID: 2228}
+      Script: {instanceID: 2244}
     - Class: 114
-      Script: {instanceID: 2326}
+      Script: {instanceID: 2342}
     - Class: 114
-      Script: {instanceID: 2470}
+      Script: {instanceID: 2486}
     - Class: 114
-      Script: {instanceID: 2642}
+      Script: {instanceID: 2658}
     - Class: 114
-      Script: {instanceID: 2736}
+      Script: {instanceID: 2694}
     - Class: 114
-      Script: {instanceID: 2934}
+      Script: {instanceID: 2754}
     - Class: 114
-      Script: {instanceID: 3084}
+      Script: {instanceID: 2952}
+    - Class: 114
+      Script: {instanceID: 3102}
+    - Class: 114
+      Script: {instanceID: 3676}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -214,6 +245,29 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
     - Class: 850595691
+      Script: {instanceID: 0}
+    Assets/Scenes/SettingsScene.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -524,6 +578,12 @@ ScriptsOnlyBuild:
     className: MarkerTrack
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: InstructionsScene
+  - hash:
+      serializedVersion: 2
       Hash: 8e6ceabfd38a184413d69b7db56c89cc
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools
@@ -746,6 +806,12 @@ ScriptsOnlyBuild:
     className: ARBackgroundRendererFeature
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ConnectionScript
+  - hash:
+      serializedVersion: 2
       Hash: a5781dc71a671b1ad2b38de19f24b71f
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -846,6 +912,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.XR.ARFoundation.dll
     namespaceName: UnityEngine.XR.ARFoundation
     className: ARHumanBody
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SettingsScript
   - hash:
       serializedVersion: 2
       Hash: ef705ae677d649d6c0ff3b4060963abd
@@ -966,8 +1038,16 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
+  - hash:
+      serializedVersion: 2
+      Hash: 8b70d2ea24ace49fa4191b2d385de628
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SetPositionScrollView
   platform: 13
   scenePathNames:
   - Assets/Scenes/MenuScene.unity
   - Assets/Scenes/MainScene.unity
-  playerPath: D:/AR/Application/tractors.apk
+  - Assets/Scenes/InstructionsScene.unity
+  - Assets/Scenes/SettingsScene.unity
+  playerPath: D:/AR-Tractors/AR-Tractors.apk

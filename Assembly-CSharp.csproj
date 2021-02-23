@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\ConnectionScript.cs" />
     <Compile Include="Assets\Scripts\DeleteObjectScript.cs" />
     <Compile Include="Assets\Scripts\SettingsScript.cs" />
+    <Compile Include="Assets\Scripts\SetPositionScrollView.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Fonts\Comfortaa\README.txt" />
