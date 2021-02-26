@@ -5,7 +5,11 @@ using UnityEngine.UI;
 
 public class Rotation : MonoBehaviour
 {
+    public Sprite noactive;
+    public Sprite active;
+
     private Button Button;
+    private Image Img;
 
     private ProgrammManager ProgrammManagerScript;
 
@@ -14,6 +18,8 @@ public class Rotation : MonoBehaviour
         ProgrammManagerScript = FindObjectOfType<ProgrammManager>();
 
         Button = GetComponent<Button>();
+        Img = Button.GetComponent<Image>();
+
         Button.onClick.AddListener(RotationFunction);
     }
 
@@ -22,12 +28,14 @@ public class Rotation : MonoBehaviour
         if (ProgrammManagerScript.Rotation)
         {
             ProgrammManagerScript.Rotation = false;
-            GetComponent<Image>().color = Color.clear;
+            //GetComponent<Image>().color = Color.clear;
+            Img.sprite = noactive;
         }
         else
         {
             ProgrammManagerScript.Rotation = true;
-            GetComponent<Image>().color = Color.green;
+            //GetComponent<Image>().color = Color.green;
+            Img.sprite = active;
         }
     }
 }
