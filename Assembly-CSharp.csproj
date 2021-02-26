@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\DeleteObjectScript.cs" />
     <Compile Include="Assets\Scripts\SettingsScript.cs" />
     <Compile Include="Assets\Scripts\SetPositionScrollView.cs" />
+    <Compile Include="Assets\Scripts\SetVolumeScript.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Fonts\Comfortaa\README.txt" />

@@ -12,7 +12,7 @@ public class MusicScript : MonoBehaviour
 {
     private Button Button;
     private Image Img;
-    private AudioSource AS;
+    public AudioSource AS;
     public AudioClip Track;
 
     private bool StateMusic;
@@ -21,8 +21,6 @@ public class MusicScript : MonoBehaviour
 
     public Sprite Music;
     public Sprite NoMusic;
-
-    private float Volume = 0.75f;
 
     void Start()
     {
@@ -33,25 +31,7 @@ public class MusicScript : MonoBehaviour
         Database = new MyDatabase();
         Database.Name = "TractorsDB.bytes";
 
-        if (Application.platform != RuntimePlatform.Android)
-        {
-            Database.path = Application.dataPath + "/Plugins/" + Database.Name;
-        }
-        else
-        {
-            Database.path = Application.persistentDataPath + "/" + Database.Name;
-
-            if (!File.Exists(Database.path))
-            {
-                WWW load = new WWW("jar:file://" + Application.dataPath + "!/assets/" + Database.Name);
-                while (!load.isDone)
-                {
-                    Debug.Log("State: " + load.isDone);
-                }
-                Debug.Log("State: " + load.isDone);
-                File.WriteAllBytes(Database.path, load.bytes);
-            }
-        }
+        Database.CreateORCheckDB();
 
         Database.connection = new SqliteConnection("URI=file:" + Database.path);
         Database.connection.Open();
@@ -74,7 +54,7 @@ public class MusicScript : MonoBehaviour
                 else if (state == 1)
                 {
                     StateMusic = true;
-                    AS.volume = Volume;
+                    AS.volume = SetVolumeScript.Volume;
                 }
                 else
                 {
@@ -130,7 +110,7 @@ public class MusicScript : MonoBehaviour
             Database.connection.Close();
 
             Img.sprite = Music;
-            AS.volume = Volume;
+            AS.volume = SetVolumeScript.Volume;
             StateMusic = true;
         }
     }
@@ -143,4 +123,29 @@ public class MyDatabase
     public SqliteCommand cmd;
     public SqliteDataReader reader;
     public string Name;
+
+    public void CreateORCheckDB()
+    {
+        if (Application.platform != RuntimePlatform.Android)
+        {
+            path = Application.dataPath + "/Plugins/" + Name;
+        }
+        else
+        {
+            path = Application.persistentDataPath + "/" + Name;
+
+            if (!File.Exists(path))
+            {
+                WWW load = new WWW("jar:file://" + Application.dataPath + "!/assets/" + Name);
+                while (!load.isDone)
+                {
+                    Debug.Log("State: " + load.isDone);
+                }
+                Debug.Log("State: " + load.isDone);
+                File.WriteAllBytes(path, load.bytes);
+            }
+        }
+    }
+
+
 }
