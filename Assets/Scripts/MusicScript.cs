@@ -12,7 +12,7 @@ public class MusicScript : MonoBehaviour
 {
     private Button Button;
     private Image Img;
-    public AudioSource AS;
+    public static AudioSource AS;
     public AudioClip Track;
 
     private bool StateMusic;
@@ -54,7 +54,7 @@ public class MusicScript : MonoBehaviour
                 else if (state == 1)
                 {
                     StateMusic = true;
-                    AS.volume = SetVolumeScript.Volume;
+                    AS.volume = Convert.ToSingle(Database.reader[1]);
                 }
                 else
                 {
@@ -107,10 +107,18 @@ public class MusicScript : MonoBehaviour
                 Database.cmd.CommandText = "UPDATE StateMusicTable SET StateMusic = 1 WHERE StateMusic = 0";
                 Database.cmd.ExecuteNonQuery();
             }
+
+            Database.cmd.CommandText = "SELECT * FROM StateMusicTable";
+            Database.reader = Database.cmd.ExecuteReader();
+            while (Database.reader.Read())
+            {
+                AS.volume = Convert.ToSingle(Database.reader[1]);
+            }
+
+            Database.reader.Close();
             Database.connection.Close();
 
             Img.sprite = Music;
-            AS.volume = SetVolumeScript.Volume;
             StateMusic = true;
         }
     }

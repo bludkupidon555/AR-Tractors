@@ -9,24 +9,67 @@ using UnityEngine.UI;
 
 public class SetVolumeScript : MonoBehaviour
 {
-    public static float Volume = 0.75f;
+    public Text Text;
 
+    public static float Volume;
     MyDatabase Database;
+
+    private AudioSource AS;
+    private Slider Slider;
 
     void Start()
     {
-        //Database = new MyDatabase();
-        //Database.Name = "TractorsDB.bytes";
-        //Database.CreateORCheckDB();
+        Slider = GetComponent<Slider>();
+        AS = GetComponent<AudioSource>();
+        Database = new MyDatabase();
+        Database.Name = "TractorsDB.bytes";
+        Database.CreateORCheckDB();
+
+        Database.connection = new SqliteConnection("URI=file:" + Database.path);
+        Database.connection.Open();
+
+        if (Database.connection.State == ConnectionState.Open)
+        {
+            Database.cmd = new SqliteCommand();
+            Database.cmd.Connection = Database.connection;
+            Database.cmd.CommandText = "SELECT * FROM StateMusicTable";
+            Database.reader = Database.cmd.ExecuteReader();
+            while (Database.reader.Read())
+            {
+                Volume = Convert.ToSingle(Database.reader[1]);
+                AS.volume = Volume;
+                Slider.value = Volume;
+                Text.text = Math.Round(Volume, 2).ToString();
+            }
+            Database.reader.Close();
+        }
+
+        Database.connection.Close();
+
+        Slider.onValueChanged.AddListener(SetVolumeFunction);
     }
 
     void Update()
     {
-        
+        AS.volume = Volume;
     }
 
-    public void SetVolume()
+    public void SetVolumeFunction(float vol)
     {
+        Database.connection = new SqliteConnection("URI=file:" + Database.path);
+        Database.connection.Open();
 
+        if (Database.connection.State == ConnectionState.Open)
+        {
+            Database.cmd = new SqliteCommand();
+            Database.cmd.Connection = Database.connection;
+            Database.cmd.CommandText = "UPDATE StateMusicTable SET Volume = '"+ vol +"' WHERE Volume = '"+ Volume +"'";
+            Database.cmd.ExecuteNonQuery();
+        }
+
+        Database.connection.Close();
+
+        Volume = vol;
+        Text.text = Math.Round(Volume, 2).ToString();
     }
 }
