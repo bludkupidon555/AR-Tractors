@@ -123,6 +123,53 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &38877565
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 38877566}
+  - component: {fileID: 38877567}
+  m_Layer: 0
+  m_Name: LanguageObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &38877566
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38877565}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 339.89944, y: 884.32715, z: -145.8208}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &38877567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38877565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ec035de928053448165f4efd576028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SettingsB: {fileID: 1219273373}
+  VolumeMusic: {fileID: 738814507}
+  SelectL: {fileID: 360514674}
+  SelectedL: {fileID: 1215920962}
 --- !u!1 &200208898
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,7 +248,7 @@ GameObject:
   - component: {fileID: 360514675}
   - component: {fileID: 360514674}
   m_Layer: 5
-  m_Name: Language(Text)
+  m_Name: LanguageText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -224,7 +271,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 858}
-  m_SizeDelta: {x: 700, y: 120}
+  m_SizeDelta: {x: 1000, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &360514674
 MonoBehaviour:
@@ -434,8 +481,9 @@ GameObject:
   - component: {fileID: 621487931}
   - component: {fileID: 621487930}
   - component: {fileID: 621487929}
+  - component: {fileID: 621487932}
   m_Layer: 5
-  m_Name: RussianB(Button)
+  m_Name: RussianButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -543,6 +591,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 621487927}
   m_CullTransparentMesh: 1
+--- !u!114 &621487932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621487927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26da3834e35f85841873a0c0dd958e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Settings: {fileID: 1219273373}
+  VolumeMusic: {fileID: 738814507}
+  SelectLanguage: {fileID: 360514674}
+  SelectedLanguage: {fileID: 1215920962}
 --- !u!1 &726991294
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,7 +698,7 @@ GameObject:
   - component: {fileID: 738814508}
   - component: {fileID: 738814507}
   m_Layer: 5
-  m_Name: MusicVolume(Text)
+  m_Name: MusicVolumeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -950,6 +1014,7 @@ RectTransform:
   - {fileID: 1066427531}
   - {fileID: 621487928}
   - {fileID: 1165189934}
+  - {fileID: 1215920961}
   m_Father: {fileID: 1181536412}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1010,7 +1075,7 @@ GameObject:
   - component: {fileID: 1066427532}
   - component: {fileID: 1066427535}
   m_Layer: 5
-  m_Name: BackB(Button)
+  m_Name: BackBButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1187,7 +1252,7 @@ GameObject:
   - component: {fileID: 1165189936}
   - component: {fileID: 1165189937}
   m_Layer: 5
-  m_Name: SetVolume(Slider)
+  m_Name: SetVolumeSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1293,7 +1358,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.75
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1476,6 +1541,85 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1215920960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1215920961}
+  - component: {fileID: 1215920963}
+  - component: {fileID: 1215920962}
+  m_Layer: 5
+  m_Name: SelectedLanguage(Text)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1215920961
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215920960}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1042903588}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 373}
+  m_SizeDelta: {x: 1000, y: 400}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1215920962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215920960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: bb4691dd1e4844840a39ba7e045883cb, type: 3}
+    m_FontSize: 75
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 80
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\u0422\u0435\u043A\u0443\u0449\u0438\u0439 \u044F\u0437\u044B\u043A:\n\n<color=\"green\">\u0420\u0443\u0441\u0441\u043A\u0438\u0439</color>"
+--- !u!222 &1215920963
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215920960}
+  m_CullTransparentMesh: 1
 --- !u!1 &1219273371
 GameObject:
   m_ObjectHideFlags: 0
@@ -1488,7 +1632,7 @@ GameObject:
   - component: {fileID: 1219273374}
   - component: {fileID: 1219273373}
   m_Layer: 5
-  m_Name: Settings(Text)
+  m_Name: SettingsText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1678,8 +1822,9 @@ GameObject:
   - component: {fileID: 1413714101}
   - component: {fileID: 1413714100}
   - component: {fileID: 1413714099}
+  - component: {fileID: 1413714102}
   m_Layer: 5
-  m_Name: EnglishB(Button)
+  m_Name: EnglishButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1787,6 +1932,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1413714097}
   m_CullTransparentMesh: 1
+--- !u!114 &1413714102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413714097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6700c4b09446a3644b3203598e1fade7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Settings: {fileID: 1219273373}
+  VolumeMusic: {fileID: 738814507}
+  SelectLanguage: {fileID: 360514674}
+  SelectedLanguage: {fileID: 1215920962}
 --- !u!1 &1526972686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1953,7 +2114,7 @@ GameObject:
   - component: {fileID: 1775954585}
   - component: {fileID: 1775954584}
   m_Layer: 5
-  m_Name: ShowVolume(Text)
+  m_Name: ShowVolumeSliderText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

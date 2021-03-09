@@ -58,21 +58,26 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\ChooseTractor.cs" />
     <Compile Include="Assets\Scripts\BackMenuScript.cs" />
+    <Compile Include="Assets\Scripts\MusicHelpScene.cs" />
+    <Compile Include="Assets\Scripts\SetLEnB.cs" />
     <Compile Include="Assets\Scripts\ExitScript.cs" />
     <Compile Include="Assets\Scripts\ReferenceBScript.cs" />
+    <Compile Include="Assets\Scripts\SetLRuB.cs" />
+    <Compile Include="Assets\Scripts\BackBSettingScript.cs" />
     <Compile Include="Assets\Scripts\SetVolumeScript.cs" />
     <Compile Include="Assets\Scripts\InstructionsScene.cs" />
     <Compile Include="Assets\Scripts\MusicScript.cs" />
     <Compile Include="Assets\Scripts\MainSceneScript.cs" />
+    <Compile Include="Assets\Scripts\LanguageScene2.cs" />
     <Compile Include="Assets\Scripts\ProgrammManager.cs" />
     <Compile Include="Assets\Scripts\Rotation.cs" />
     <Compile Include="Assets\Scripts\OrientationScreen.cs" />
-    <Compile Include="Assets\Scripts\Test1.cs" />
     <Compile Include="Assets\Scripts\AddObject.cs" />
     <Compile Include="Assets\Scripts\DeleteObjectScript.cs" />
     <Compile Include="Assets\Scripts\SettingsScript.cs" />
+    <Compile Include="Assets\Scripts\LanguageScene3.cs" />
     <Compile Include="Assets\Scripts\SetPositionScrollView.cs" />
-    <Compile Include="Assets\Scripts\BackBSettingScript.cs" />
+    <Compile Include="Assets\Scripts\LanguageScene0.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Fonts\Comfortaa\README.txt" />

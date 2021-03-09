@@ -559,9 +559,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3789786387587753260}
+  - component: {fileID: -1911143576893028364}
+  - component: {fileID: -3189037835079665328}
   m_Layer: 0
   m_Name: tractor k-703ma-dm15 v2
-  m_TagString: Untagged
+  m_TagString: UnSelected
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -575,7 +577,7 @@ Transform:
   m_GameObject: {fileID: 4599255006342234006}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 378.64, y: 712.8, z: -1474.21}
-  m_LocalScale: {x: 0.06, y: 0.06, z: 0.06}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_Children:
   - {fileID: 65759805666131529}
   - {fileID: 6740295380409007237}
@@ -599,6 +601,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!54 &-1911143576893028364
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4599255006342234006}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &-3189037835079665328
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4599255006342234006}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.0672, y: 4.919922, z: 5.182373}
+  m_Center: {x: -1.3329773, y: 1.9210205, z: 0.10266113}
 --- !u!1 &4687266085319486962
 GameObject:
   m_ObjectHideFlags: 0

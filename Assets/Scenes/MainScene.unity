@@ -1629,7 +1629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c72415be703e9741ade8fd3c0e07150, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChoosedTractor: {fileID: 7255971214552641663, guid: 4d9086b1266b1604388df75766bf06a3, type: 3}
+  ChoosedTractor: {fileID: 6404207281271122448, guid: a0a872cc2c0d38944acea63b28dee652, type: 3}
 --- !u!114 &983721847
 MonoBehaviour:
   m_ObjectHideFlags: 0

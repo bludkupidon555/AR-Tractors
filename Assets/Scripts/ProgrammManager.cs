@@ -53,21 +53,19 @@ public class ProgrammManager : MonoBehaviour
         MoveObjectAndRotation();
     }
 
-    void  ShowMarkerAndSetObjects()
+    void  ShowMarkerAndSetObjects()//Функция отображения маркера и добавления объектов на сцену
     {
-        List<ARRaycastHit> hits = new List<ARRaycastHit>();
+        List<ARRaycastHit> hits = new List<ARRaycastHit>();// Лист лучей, которые нашли плоскость
 
-        ARRaycastManagerScript.Raycast(new Vector2(Screen.width / 2, Screen.height / 2), hits, TrackableType.Planes);
+        ARRaycastManagerScript.Raycast(new Vector2(Screen.width / 2, Screen.height / 2), hits, TrackableType.Planes);// Запуск луча для поиска плоскости
 
-        //Отображаем маркер
-        if (hits.Count > 0)
+        if (hits.Count > 0)// Если плоскость найдена, отображаем красный маркер
         {
             PlaneMarkerPrefab.transform.position = hits[0].pose.position;
             PlaneMarkerPrefab.SetActive(true);
         }
 
-        //Ставим объект
-        if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+        if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)// Если есть нажатие, то добавляем выбранный объект
         {
             Instantiate(ObjectToSpawn, hits[0].pose.position, ObjectToSpawn.transform.rotation);
             ChooseObject = false;
@@ -75,14 +73,14 @@ public class ProgrammManager : MonoBehaviour
         }
     }
 
-    void MoveObjectAndRotation()
+    void MoveObjectAndRotation()// Функция перемещения или вращения объектов
     {
-        if(Input.touchCount > 0)
+        if(Input.touchCount > 0)// Если вы нажали на экран
         {
             Touch touch = Input.GetTouch(0);
             TouchPosition = touch.position;
 
-            if (touch.phase == TouchPhase.Began)
+            if (touch.phase == TouchPhase.Began)// Если вы выделили объект на экране, то он получает тег Selected(выделенный)
             {
                 Ray ray = ARCamera.ScreenPointToRay(touch.position);
                 RaycastHit hitObject;
@@ -96,17 +94,17 @@ public class ProgrammManager : MonoBehaviour
                 }
             }
 
-            SelectedObject = GameObject.FindWithTag("Selected");
+            SelectedObject = GameObject.FindWithTag("Selected");// Выделенный объект
 
-            if (touch.phase == TouchPhase.Moved && Input.touchCount == 1)
+            if (touch.phase == TouchPhase.Moved && Input.touchCount == 1)// Если вы нажали на экран и не отпустили кнопку
             {
-                if (Rotation)
+                if (Rotation)// Если кнопка "Перемещение-вращение" активна, то выполняется функция вращения объекта
                 {
                     YRotation = Quaternion.Euler(0f, -touch.deltaPosition.x*0.1f, 0f);
                     SelectedObject.transform.rotation = YRotation * SelectedObject.transform.rotation;
                     delButton.SetActive(true);
                 }
-                else
+                else// Иначе, объект перемещается
                 {
                     ARRaycastManagerScript.Raycast(TouchPosition, hits, TrackableType.Planes);
                     SelectedObject.transform.position = hits[0].pose.position;
@@ -114,7 +112,7 @@ public class ProgrammManager : MonoBehaviour
                 }
             }
 
-            if(touch.phase == TouchPhase.Ended)
+            if(touch.phase == TouchPhase.Ended)// При отжатии на экран, выбранный объект получает тег Unselected(невыделенный)
             {
                 if(SelectedObject.CompareTag("Selected"))
                 {

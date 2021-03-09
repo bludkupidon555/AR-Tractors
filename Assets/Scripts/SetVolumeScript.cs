@@ -36,10 +36,23 @@ public class SetVolumeScript : MonoBehaviour
             Database.reader = Database.cmd.ExecuteReader();
             while (Database.reader.Read())
             {
-                Volume = Convert.ToSingle(Database.reader[1]);
-                AS.volume = Volume;
-                Slider.value = Volume;
-                Text.text = Math.Round(Volume, 2).ToString();
+                int state = Convert.ToInt32(Database.reader[0]);
+
+                if (state == 0)
+                {
+                    AS.volume = 0;
+                }
+                else if (state == 1)
+                {
+                    Volume = Convert.ToSingle(Database.reader[1]);
+                    AS.volume = Volume;
+                    Slider.value = Volume;
+                    Text.text = Math.Round(Volume, 2).ToString();
+                }
+                else
+                {
+                    AS.volume = 0;
+                }
             }
             Database.reader.Close();
         }
